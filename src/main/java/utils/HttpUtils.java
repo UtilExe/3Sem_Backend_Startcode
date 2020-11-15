@@ -22,7 +22,11 @@ public class HttpUtils {
             con.setRequestProperty("Authorization","Bearer "+ Keys.digitalOceanBearer);
         }
         
-        Scanner scan = new Scanner(con.getInputStream(), "UTF-8");
+        if (url.toString().contains("api.sallinggroup.com")) {
+            con.setRequestProperty("Authorization","Bearer "+ Keys.Sallingbearer);
+        }
+        
+        Scanner scan = new Scanner(con.getInputStream());
         String jsonStr = null;
         if (scan.hasNext()) {
             jsonStr = scan.nextLine();

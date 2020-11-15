@@ -27,7 +27,9 @@ public class ApplicationConfig extends Application {
         resources.add(rest.DemoResource.class);
         resources.add(rest.DigitalOceanResource.class);
         resources.add(rest.MovieResource.class);
+        resources.add(rest.SallingResource.class);
         resources.add(rest.ServicePointResource.class);
+        resources.add(rest.SimplyResource.class);
         resources.add(security.JWTAuthenticationFilter.class);
         resources.add(security.LoginEndpoint.class);
         resources.add(security.RolesAllowedFilter.class);

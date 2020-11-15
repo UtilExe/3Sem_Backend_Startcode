@@ -2,6 +2,7 @@
 package dto;
 
 public class DigitalOceanResponseDTO {
+    
     private Object droplets;
 
     public DigitalOceanResponseDTO(Object droplets) {
