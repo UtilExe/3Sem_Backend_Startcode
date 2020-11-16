@@ -4,6 +4,7 @@ package dto;
 
 public class SallingResponseDTO {
     
+    private Object name;
     private String date;
 
     public SallingResponseDTO(String date) {
@@ -17,6 +18,7 @@ public class SallingResponseDTO {
     public void setDate(String date) {
         this.date = date;
     }
-    
+
+   
     
 }

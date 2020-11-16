@@ -13,9 +13,9 @@ public class HttpUtils {
         URL url = new URL(_url);
         HttpURLConnection con = (HttpURLConnection) url.openConnection();
         con.setRequestMethod("GET");
-        con.setRequestProperty("Accept", "application/json;charset=UTF-8");
-        //con.setRequestProperty("Accept", "application/json");
-        con.setRequestProperty("User-Agent", "server");
+      //  con.setRequestProperty("Accept", "application/json;charset=UTF-8");
+        con.setRequestProperty("Accept", "application/json");
+       con.setRequestProperty("User-Agent", "server");
         con.setRequestProperty("Content-Type", "application/json");
         
         if (url.toString().contains("api.digitalocean")) {
