@@ -1,24 +1,13 @@
 
 package dto;
 
+import java.util.ArrayList;
+import java.util.List;
+
 
 public class SallingResponseDTO {
-    
-    private Object name;
+
+    private String name;
     private String date;
-
-    public SallingResponseDTO(String date) {
-        this.date = date;
-    }
-
-    public String getDate() {
-        return date;
-    }
-
-    public void setDate(String date) {
-        this.date = date;
-    }
-
-   
-    
+    private boolean nationalHoliday;
 }

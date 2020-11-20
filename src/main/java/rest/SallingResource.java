@@ -54,38 +54,7 @@ public class SallingResource {
     public String getHolidays() throws IOException {
         String URL = sallingHolidayURL;
         String salling = HttpUtils.fetchData(URL);
-        SallingResponseDTO sallingRespDTO = gson.fromJson(salling, SallingResponseDTO.class);
+        SallingResponseDTO[] sallingRespDTO = gson.fromJson(salling, SallingResponseDTO[].class);
         return gson.toJson(sallingRespDTO);
-
-    /*
-    @GET
-    @Produces({MediaType.APPLICATION_JSON})
-    @Consumes({MediaType.APPLICATION_JSON})
-  //  @RolesAllowed({"user", "admin"})
-    public String getServicePointAndWeather() throws IOException, InterruptedException, ExecutionException, TimeoutException {
-        return responseFromExternalServersParallel(es);
-    }
-
-    public static String responseFromExternalServersParallel(ExecutorService threadPool) throws InterruptedException, ExecutionException, TimeoutException 
-    {
-        Callable<SallingResponseDTO> holidayTask = new Callable<SallingResponseDTO>() {
-            @Override
-            public SallingResponseDTO call() throws IOException {
-                String URL = sallingHolidayURL+"?translation=da-dk";
-                String holiday = HttpUtils.fetchData(URL);
-
-                SallingResponseDTO aHolidayDTO = gson.fromJson(holiday, SallingResponseDTO.class);
-                return aHolidayDTO;
-            }
-        };
-
-        Future<SallingResponseDTO> futureHoliday = threadPool.submit(holidayTask);
-
-        SallingResponseDTO holi = futureHoliday.get(3, TimeUnit.SECONDS);
-
-        String holidayJSON = gson.toJson(holi);
-
-        return holidayJSON;
-    }
-    */
+}
 }

@@ -92,30 +92,5 @@ public class ServicePointResourceTest
                 .body("msg", equalTo("Hello World"));
     }
     
-    @Test
-    public void responseFromExternalServersParallelTest() throws InterruptedException, ExecutionException, TimeoutException 
-    {
-        String expectedServicepoints = "\"servicePoints\":";
-        String expectedWeather = "\"weather\": {";
-        String result = ServicePointResource.responseFromExternalServersParallel(es, addressDTO);
-        boolean isExpectedLikeResult = (result.contains(expectedServicepoints) && result.contains(expectedWeather));
-        
-        assertTrue(isExpectedLikeResult);
-    }
-    
-    @Test
-    public void servicepointsTest() {
-        String json = String.format
-        (
-                "{city: \"%s\", postalCode: \"%s\", streetName: \"%s\", streetNumber: \"%s\"}"
-                , addressDTO.getCity(), addressDTO.getPostalCode(), addressDTO.getStreetName(), addressDTO.getStreetNumber()
-        );
-        given()
-                .contentType("application/json")
-                .accept(ContentType.JSON)
-                .body(json)
-                .when().post("/servicepoints/servicepoints")
-                .then()
-                .statusCode(200);
-    }
+  
 }
